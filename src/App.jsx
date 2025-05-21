@@ -1,12 +1,14 @@
-import { useState } from "react";
-import reactLogo from "./assets/react.svg";
-import viteLogo from "/vite.svg";
-import "./App.css";
-
+import { useEffect, useState } from "react";
+import { collection, getDocs } from "firebase/firestore";
+import { db } from "../firebaseConfig";
+import ProductRegister from "./pages/ProductRegister";
+import ProductList from "./pages/BarcodeInputScanner";
+import BarcodeInputScanner from "./pages/BarcodeInputScanner";
 function App() {
   return (
     <>
-      <div className="font-bold">hello world</div>
+      <ProductRegister />
+      <BarcodeInputScanner />
     </>
   );
 }

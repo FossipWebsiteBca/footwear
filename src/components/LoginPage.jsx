@@ -1,57 +1,63 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import { FaEnvelope, FaLock } from "react-icons/fa";
 
-export default function LoginPage() {
+export default function Login() {
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-100">
-      <div className="flex bg-white rounded shadow-md w-full max-w-5xl overflow-hidden">
-        
-        {/* Left: Login Form */}
-        <div className="w-1/2 p-8">
-          <h2 className="text-2xl font-bold mb-6 text-[#4E1F00]">Login</h2>
-          <form className="text-left">
-            <div className="mb-4 flex items-center">
-              <label htmlFor="email" className="w-32 text-sm font-medium text-gray-700">Email</label>
+    <div className="flex flex-col md:flex-row min-h-screen font-sans bg-white">
+      {/* Left Side - Login Form */}
+      <div className="w-full md:w-1/2 flex flex-col justify-center px-6 md:px-10 relative">
+        {/* Logo */}
+        <div className="absolute top-6 left-6 md:top-8 md:left-8 flex flex-col items-start">
+          <span className="text-sm font-semibold tracking-wider">
+            <img
+              src="/image1.jpg"
+              alt=""
+              className="w-[120px] md:w-[160px] h-auto"
+            />
+          </span>
+        </div>
+
+        <span className="text-sm font-medium p-5 md:ml-[5rem]">LOGIN</span>
+
+        <div className="w-full max-w-sm mx-auto">
+          <div className="mb-6">
+            <div className="flex items-center border-b border-gray-300 py-2">
+              <FaEnvelope className="text-black mr-3" />
               <input
                 type="email"
-                id="email"
-                className="flex-1 px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-                placeholder="you@example.com"
+                placeholder="Email Address"
+                className="w-full outline-none text-gray-700"
               />
             </div>
-            <div className="mb-6 flex items-center">
-              <label htmlFor="password" className="w-32 text-sm font-medium text-gray-700">Password</label>
+          </div>
+
+          <div className="mb-6">
+            <div className="flex items-center border-b border-gray-300 py-2">
+              <FaLock className="text-black mr-3" />
               <input
                 type="password"
-                id="password"
-                className="flex-1 px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-                placeholder="••••••••"
+                placeholder="Password"
+                className="w-full outline-none text-gray-700"
               />
             </div>
-            <button
-              type="submit"
-              className="w-full bg-[#4E1F00] text-white py-2 px-4 rounded hover:bg-[#604652] transition"
-            >
-              Login
-            </button>
-          </form>
-          <p className="text-sm text-center text-gray-600 mt-4">
-            Don't have an account?{' '}
-            <Link to="/signup" className="text-blue-600 hover:underline">
-  Sign Up
-</Link>
+          </div>
 
-          </p>
+          <button className="text-white bg-blue-800 w-full h-10 mt-5 outline-none rounded-md font-bold">
+            Login
+          </button>
         </div>
+      </div>
 
-        {/* Right: Image Panel */}
-        <div className="w-1/2 bg-gray-100 flex items-center justify-center">
-          <img
-            src="/images/login1.png"
-            alt="Login Illustration"
-            className="object-contain h-85 width-60"
-          />
-        </div>
+      {/* Right Side - Sneaker Image */}
+      <div className="w-full md:w-1/2 relative flex items-center justify-center overflow-hidden bg-white mt-10 md:mt-0">
+        {/* Light Blue Curved Background */}
+        <div className="absolute right-0 top-0 h-full w-[300px] md:w-[400px] bg-blue-100  "></div>
+
+        {/* Sneaker Image */}
+        <img
+          src="./sneakers.jpg"
+          alt="Sneakers"
+          className="w-[250px] md:w-[400px] object-contain relative z-10"
+        />
       </div>
     </div>
   );
